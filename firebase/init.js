@@ -10,19 +10,6 @@ import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDcPvw-K_5ynHVI-k4EFYZUINgxJmg5GPo",
-
-  authDomain: "chatapp-74897.firebaseapp.com",
-
-  databaseURL: "https://chatapp-74897-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-  projectId: "chatapp-74897",
-
-  storageBucket: "chatapp-74897.appspot.com",
-
-  messagingSenderId: "66706900986",
-
-  appId: "1:66706900986:web:c39462760c05730a4bc643"
 
 
 };
