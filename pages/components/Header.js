@@ -1,35 +1,40 @@
 
 
-function Header({ title, menu, setMenu }) {
+function Header({ title, menu, setCurrentMenu }) {
 
 
 
-  return (
-    <div>
+	return (
+		<div>
 
-      {/* PC */}
-      <div className="hidden md:block">
+			{/* PC */}
+			<div className="hidden md:block">
 
-      </div>
+			</div>
 
-      {/* Mobile */}
-      <div className="
-      bg-red-200 absolute w-full bottom-0 h-20 flex justify-around items-center font-bold shadow-md
+			{/* Mobile */}
+			<div className="
+       absolute w-full bottom-0 h-20 flex justify-around items-center font-bold shadow-md
       md:top-0 md:justify-between
       ">
-        <h1 className="hidden md:block pl-20">{title}</h1>
+				<h1 className="hidden md:block pl-20">{title}</h1>
 
-        <div className="flex justify-around w-full md:mr-20 md:w-[45vw]">
-          <p className="">test</p>
-          <p>test</p>
-          <p>test</p>
-          <p>test</p>
-        </div>
+				<div className="flex justify-around w-full md:mr-20 md:w-[45vw]">
 
-      </div>
+					{menu.map(item => (
+						<div
+							className="bg-white w-full border-r-2 border-t-2 md:border-0 flex justify-center items-center h-20  hover:cursor-pointer"
+							onClick={() => { setCurrentMenu(item.menuName) }}>
+							{item.menuName}
+						</div>
+					))}
+
+				</div>
+
+			</div>
 
 
-    </div>
-  )
+		</div>
+	)
 }
 export default Header
