@@ -15,33 +15,37 @@ const haveSideMenu = true
 
 export default function Home() {
 
-	const [menu, setMenu] = useState([
-		{ component: <Menu1 />, menuName: "Home" },
-		{ component: <Menu2 />, menuName: "Menu2" },
-		{ component: <Menu3 />, menuName: "Menu3" },
-		{ component: <Menu4 />, menuName: "Menu4" },
-	])
+  const [menu, setMenu] = useState([
+    { component: <Menu1 />, menuName: "Home" },
+    { component: <Menu2 />, menuName: "Menu2" },
+    { component: <Menu3 />, menuName: "Menu3" },
+    { component: <Menu4 />, menuName: "Menu4" },
+  ])
 
-	const [currentMenu, setCurrentMenu] = useState("Home")
+  const [currentMenu, setCurrentMenu] = useState("Home")
 
-	return (
-		<div>
-			<HeadCustom title={AppName} />
+  return (
+    <div>
+      <HeadCustom title={AppName} />
 
-			<Header title={AppName} menu={menu} setCurrentMenu={setCurrentMenu} haveSideMenu={haveSideMenu} />
+      <Header title={AppName} menu={menu} setCurrentMenu={setCurrentMenu} haveSideMenu={haveSideMenu} />
 
-			<div className='md:mt-20'>
-				{haveSideMenu && <SideMenu />}
-				{menu.map((item) => (currentMenu == item.menuName && item.component))}
-			</div>
-
-
-
-
-
-
+      <div className='md:mt-20'>
+        {haveSideMenu && <SideMenu />}
+        {menu.map((item) => (
+          <div key={item.menuName}>
+            {currentMenu == item.menuName && item.component}
+          </div>
+        ))}
+      </div>
 
 
-		</div>
-	)
+
+
+
+
+
+
+    </div>
+  )
 }
